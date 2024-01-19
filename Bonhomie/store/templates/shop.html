@@ -41,9 +41,10 @@
             <div class="tab-content">
               <div id="all" data-tab-content class="active">
                 <div class="row d-flex flex-wrap">
+                  {% for product in products %}
                   <div class="product-item col-lg-4 col-md-6 col-sm-6">
                     <div class="image-holder">
-                      <img src="{% static 'images/selling-products1.jpg' %}" alt="Books" class="product-image">
+                      <img src="{% static 'images/selling-products1.jpg' %}{{ product.image }}" alt="{{ product.name }}" class="product-image">
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
@@ -62,11 +63,14 @@
                     </div>
                     <div class="product-detail">
                       <h3 class="product-title">
-                        <a href="single-product.html">Half sleeve T-shirt</a>
+                        <a href="single-product.html">{{ product.name }}</a>
                       </h3>
-                      <div class="item-price text-primary">$40.00</div>
+                      <div class="item-price text-primary">{{ product.price }}</div>
                     </div>
                   </div>
+
+                  {% endfor %}
+
                   <div class="product-item col-lg-4 col-md-6 col-sm-6">
                     <div class="image-holder">
                       <img src="{% static 'images/selling-products2.jpg' %}" alt="Books" class="product-image">
@@ -1037,57 +1041,41 @@
             <div class="widgets widget-product-tags">
               <h5 class="widget-title">Tags</h5>
               <ul class="product-tags sidebar-list list-unstyled">
+                {% for tag in tags %}
                 <li class="tags-item">
-                  <a href="">White</a>
+                  <a href="{% url 'shop' %}?tag={{ tag.name }}">{{ tag.name }}</a>
                 </li>
-                <li class="tags-item">
-                  <a href="">Cheap</a>
-                </li>
-                <li class="tags-item">
-                  <a href="">Branded</a>
-                </li>
-                <li class="tags-item">
-                  <a href="">Modern</a>
-                </li>
-                <li class="tags-item">
-                  <a href="">Simple</a>
-                </li>
+                {%  endfor %}
               </ul>
             </div>
             <div class="widgets widget-product-brands">
               <h5 class="widget-title">Brands</h5>
               <ul class="product-tags sidebar-list list-unstyled">
+                {% for brand in brands %}
                 <li class="tags-item">
-                  <a href="">Nike</a>
+                  <a href="{% url 'shop' %}?brand={{ brand.name }}">{{ brand.name}}</a>
                 </li>
-                <li class="tags-item">
-                  <a href="">Adidas</a>
-                </li>
-                <li class="tags-item">
-                  <a href="">Puma</a>
-                </li>
-                <li class="tags-item">
-                  <a href="">Spike</a>
-                </li>
+                {% endfor %}
               </ul>
             </div>
             <div class="widgets widget-price-filter">
               <h5 class="widget-title">Filter By Price</h5>
               <ul class="product-tags sidebar-list list-unstyled">
+                
                 <li class="tags-item">
-                  <a href="">Less than $10</a>
+                  <a href="{% url 'shop' %}?min_price=0&max_price=10">Less than $10</a>
                 </li>
                 <li class="tags-item">
-                  <a href="">$10- $20</a>
+                  <a href="{% url 'shop' %}?min_price=10&max_price=20">$10- $20</a>
                 </li>
                 <li class="tags-item">
-                  <a href="">$20- $30</a>
+                  <a href="{% url 'shop' %}?min_price=20&max_price=30">$20- $30</a>
                 </li>
                 <li class="tags-item">
-                  <a href="">$30- $40</a>
+                  <a href="{% url 'shop' %}?min_price=30&max_price=40">$30- $40</a>
                 </li>
                 <li class="tags-item">
-                  <a href="">$40- $50</a>
+                  <a href="{% url 'shop' %}?min_price=40&max_price=50">$40- $50</a>
                 </li>
               </ul>
             </div>
