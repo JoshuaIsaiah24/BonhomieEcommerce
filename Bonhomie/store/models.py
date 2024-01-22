@@ -2,6 +2,15 @@ from django.db import models
 
 # Create your models here.
 
+class Category(models.Model):
+    name = models.CharField(max_length = 255)
+    
+    class Meta:
+        verbose_name_plural = "Categories"
+    
+    def __str__(self):
+        return self.name
+
 class Tag(models.Model):
     name = models.CharField(max_length = 255)
     
@@ -20,6 +29,7 @@ class Product(models.Model):
     tags = models.ForeignKey(Tag, on_delete = models.RESTRICT)
     brand = models.ForeignKey(Brand, on_delete= models.RESTRICT)
     image = models.ImageField(upload_to= 'uploads/product/', null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete = models.RESTRICT, null=True, blank=True)
     
     def __str__(self):
         return self.name
