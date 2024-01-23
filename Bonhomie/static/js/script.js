@@ -49,45 +49,55 @@
     });
   }
 
-  // Tab Section
-  var initTabs = function () {
-    const tabs = document.querySelectorAll('[data-tab-target]')
-    const tabContents = document.querySelectorAll('[data-tab-content]')
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-
-        if (target) {
-          tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active')
-          })
-
-          tabs.forEach(tab => {
-            tab.classList.remove('active')
-          })
-
-          tab.classList.add('active')
-          target.classList.add('active')
-        } else {
-          console.error('Target element not found!')
-        }
-      })
-    })
-  }
-
   // document ready
   $(document).ready(function() {
     searchPopup();
     initPreloader();
-    initTabs();
     initJarallax();
-
+  
     jQuery(document).ready(function($) {
       jQuery('.stellarnav').stellarNav({
         position: 'right'
       });
     });
+  
+    $(".user-items .icon-search").click(function(){
+      $(".search-box").toggleClass('active');
+      $(".search-box .search-input").focus();
+    });
+    $(".close-button").click(function(){
+      $(".search-box").toggleClass('active');
+    });
+  
+    // Tabs initialization function
+    var initTabs = function () {
+      const tabs = document.querySelectorAll('[data-tab-target]')
+      const tabContents = document.querySelectorAll('[data-tab-content]')
+  
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = document.querySelector(tab.dataset.tabTarget)
+  
+          if (target) {
+            tabContents.forEach(tabContent => {
+              tabContent.classList.remove('active')
+            })
+  
+            tabs.forEach(tab => {
+              tab.classList.remove('active')
+            })
+  
+            tab.classList.add('active')
+            target.classList.add('active')
+          } else {
+            console.error('Target element not found!')
+          }
+        })
+      })
+    }
+  
+    // Call the initTabs function after defining it
+    initTabs();
 
     $(".user-items .icon-search").click(function(){
       $(".search-box").toggleClass('active');
