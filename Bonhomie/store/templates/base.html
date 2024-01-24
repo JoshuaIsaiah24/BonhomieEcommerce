@@ -48,25 +48,25 @@
 
       <ul class="cat-list">
         <li class="cat-list-item">
-          <a href="shop.html" title="Men Jackets">Men Jackets</a>
+          <a href="{% url 'shop' %}" title="Men Jackets">Men Jackets</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Fashion">Fashion</a>
+          <a href="{% url 'shop' %}" title="Fashion">Fashion</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Casual Wears">Casual Wears</a>
+          <a href="{% url 'shop' %}" title="Casual Wears">Casual Wears</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Women">Women</a>
+          <a href="{% url 'shop' %}" title="Women">Women</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Trending">Trending</a>
+          <a href="{% url 'shop' %}" title="Trending">Trending</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Hoodie">Hoodie</a>
+          <a href="{% url 'shop' %}" title="Hoodie">Hoodie</a>
         </li>
         <li class="cat-list-item">
-          <a href="shop.html" title="Kids">Kids</a>
+          <a href="{% url 'shop' %}" title="Kids">Kids</a>
         </li>
       </ul>
     </div>
@@ -86,7 +86,7 @@
             <div class="col-md-4 col-sm-12 user-items">
               <ul class="d-flex justify-content-end list-unstyled">
                 <li>
-                  <a href="login.html">
+                  <a href="{% url 'log-in' %}">
                     <i class="icon icon-user"></i>
                   </a>
                 </li>
@@ -167,7 +167,7 @@
                       <ul class="submenu">
                         <li><a href="coming-soon.html" class="item-anchor">Coming soon<span class="text-primary">
                               </span></a></li>
-                        <li><a href="login.html" class="item-anchor">Login<span class="text-primary"></span></a>
+                        <li><a href="{% url 'log-in' %}" class="item-anchor">Login<span class="text-primary"></span></a>
                         </li>
                         <li><a href="{% url 'about' %}" class="item-anchor">About<span class="text-primary"></span></a>
                         </li>
