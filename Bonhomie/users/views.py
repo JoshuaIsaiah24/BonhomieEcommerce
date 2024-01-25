@@ -18,7 +18,7 @@ def login_user(request):
             messages.error(request, "There was an error logging in, try again...")
             return redirect("log-in")
     else:
-        return render(request, 'authenticate/login.html', {})
+        return render(request, 'register/login.html', {})
 
 def register_user(request):
     if request.method == 'POST':
@@ -26,7 +26,7 @@ def register_user(request):
         if register_form.is_valid():
             user = register_form.save()
             messages.success(request, "User registered successfully! Please try logging in...")
-            return redirect("login")
+            return redirect("log-in")
     else:
         register_form = RegisterForm()
-    return render(request, 'authenticate/login.html', {'register_form':register_form})
+    return render(request, 'register/login.html', {'register_form':register_form})
