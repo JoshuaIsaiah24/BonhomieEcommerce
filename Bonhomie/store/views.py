@@ -9,9 +9,6 @@ def home(request):
 def about(request):
     return render(request, 'about.html', {})
 
-def contact(request):
-    return render(request, 'contact.html', {})
-
 def shop(request, category_slug=None):
     # Get all products, categories, tags, and brands initially
     products = Product.objects.all()

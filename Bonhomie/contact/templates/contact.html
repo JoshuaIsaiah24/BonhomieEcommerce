@@ -21,6 +21,14 @@
     </div>
   </section>
 
+  {% if messages %} 
+  {% for message in messages %}
+<div class="d-flex justify-content-center">
+    {{ message }}
+</div>
+   {% endfor %}
+  {% endif %} 
+
   <section class="contact-information padding-large">
     <div class="container">
       <div class="row">
@@ -61,13 +69,16 @@
             <div class="section-header">
               <h2 class="section-title">Send us a message</h2>
             </div>
-            <form name="contactform" action="contact.php" method="post" class="contact-form">
+            <form name="contactform" action="/contact/" method="post" class="contact-form">
+              {% csrf_token %}
+              {% for field in contact_form %}
               <div class="form-item">
                 <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required>
                 <input type="email" name="email" placeholder="E-mail" class="u-full-width bg-light" required>
                 <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;"
                   required></textarea>
               </div>
+              {% endfor %}
               <label>
                 <input type="checkbox" required>
                 <span class="label-body">I agree all the <a href="#">terms and conditions</a>
