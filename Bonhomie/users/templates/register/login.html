@@ -67,28 +67,24 @@
               <form method ="POST" action ="{% url 'register-user' %}">
                 {% csrf_token %}
               <div class="form-group">
-                <label for="{{ register_form.username.id_for_label }}">Username *</label>
+                <label for="{{ register_form.username.label_tag }}">Username *</label>
                 {{ register_form.username }}
-                <input type="text" minlength="2" name="username" placeholder="Your Username"
-                class="u-full-width bg-light" required>
+                
               </div>
               <div class="form-group">
-                <label for="{{ register_form.email.id_for_label }}">Your email address *</label>
+                <label for="{{ register_form.email.label_tag }}">Your email address *</label>
                 {{ register_form.email }}
-                <input type="text" minlength="2" name="email" placeholder="Your Email Address"
-                  class="u-full-width bg-light" required>
+                
               </div>
               <div class="form-group">
-                <label for="{{ register_form.password1.id_for_label }}">Password *</label>
+                <label for="{{ register_form.password1.label_tag }}">Password *</label>
                 {{ register_form.password1 }}
-                <input type="password" minlength="2" name="password" placeholder="Your Password"
-                  class="u-full-width bg-light" required>
+                
               </div>
               <div class="form-group">
-                <label for="{{ register_form.password2.id_for_label }}">Confirm Password *</label>
+                <label for="{{ register_form.password2.label_tag }}">Confirm Password *</label>
                 {{ register_form.password2 }}
-                <input type="password" minlength="2" name="password2" placeholder="Confirm Your Password" 
-                  class="u-full-width bg-light" required>
+                
               </div>
               <label>
                 <input type="checkbox" required>
