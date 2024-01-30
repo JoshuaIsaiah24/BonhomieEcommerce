@@ -69,14 +69,18 @@
             <div class="section-header">
               <h2 class="section-title">Send us a message</h2>
             </div>
-            <form name="contactform" action="/contact/" method="post" class="contact-form">
+            <form name="contactform" action="/contact/email/" method="post" class="contact-form">
               {% csrf_token %}
               {% for field in contact_form %}
               <div class="form-item">
+                {% if field.name == 'name' %}
                 <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width bg-light" required>
+                {% elif field.name == 'email' %}
                 <input type="email" name="email" placeholder="E-mail" class="u-full-width bg-light" required>
+                {% elif field.name == 'message' %}
                 <textarea class="u-full-width bg-light" name="message" placeholder="Message" style="height: 180px;"
                   required></textarea>
+                {% endif %}  
               </div>
               {% endfor %}
               <label>

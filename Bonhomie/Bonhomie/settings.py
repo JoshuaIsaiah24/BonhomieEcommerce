@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # apps
     'store',
     'users',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -152,7 +153,7 @@ EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
 
 EMAIL_HOST_USER = 'a074152fcb6d52'
 
-EMAIL_HOST_PASSWORD = '********8acc'
+EMAIL_HOST_PASSWORD = ''
 
 EMAIL_PORT = '2525'
 
