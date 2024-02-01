@@ -8,20 +8,20 @@ from .forms import contactForm
 # Create your views here.
 def contact(request):
     if request.method == 'POST':
-        contact_form = contactForm()
+        contact_form = contactForm(request.POST)
         if contact_form.is_valid():
             name = contact_form.cleaned_data['name']
             email = contact_form.cleaned_data['email']
             message = contact_form.cleaned_data['message']
             
-            EmailMessage(
-                
-            'Contact Form Submission from {}'.format(name), 
-            message, 
-            'Bonhomiebasics.com', 
-            ['maryjoybranzuela@gmail.com'], 
-            reply_to=[email]).send()
-            
+            email_message = EmailMessage (
+                'Contact Form Submission from {}'.format(name), 
+                message, 
+                'joshuaisaiah.caballero@gmail.com', 
+                ['joshuaisaiah.caballero@gmail.com'], 
+                reply_to=[email],
+                ) 
+            email_message.send()
             messages.success(request, 'Message successfully sent!')
             return redirect('contact')
         
