@@ -1,0 +1,2 @@
+# exclude settings on the repo to hide sensitive info
+Bonhomie/settings.py
