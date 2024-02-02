@@ -38,8 +38,10 @@
               <li data-tab-target="#jackets" class="tab">Jackets</li>
               <li data-tab-target="#accessories" class="tab">Accessories</li>
             </ul>
+
             <div class="tab-content">
-              <div id="All" data-tab-content class="active">
+
+              <div id="all" data-tab-content class="active">
                 <div class="row d-flex flex-wrap">
                   {% for product in products %}
                   <div class="product-item col-lg-4 col-md-6 col-sm-6">
@@ -48,15 +50,14 @@
                       <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
                       {% else %}
                       <p>No image available</p>
-                      {% endif%}
+                      {% endif %}
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
                         <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
                             class="icon icon-arrow-io"></i>
                         </button>
-                        <button type="button" class="view-btn tooltip
-                              d-flex">
+                        <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
                         </button>
@@ -73,6 +74,274 @@
                     </div>
                   </div>
                   {% endfor %}
+                </div>
+              </div>
+
+              <div id="shoes" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Shoes' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="tshirts" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Tshirts' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="pants" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Pants' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="hoodie" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Hoodie' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="outer" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Outer' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="jackets" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Jackets' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div id="accessories" data-tab-content>
+                <div class="row d-flex flex-wrap">
+                  {% for product in products %}
+                    {% if product.category.name == 'Accessories' %}
+                  <div class="product-item col-lg-4 col-md-6 col-sm-6">
+                    <div class="image-holder">
+                      {% if product.image %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                      {% else %}
+                      <p>No image available</p>
+                      {% endif %}
+                    </div>
+                    <div class="cart-concern">
+                      <div class="cart-button d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
+                            class="icon icon-arrow-io"></i>
+                        </button>
+                        <button type="button" class="view-btn tooltip d-flex">
+                          <i class="icon icon-screen-full"></i>
+                          <span class="tooltip-text">Quick view</span>
+                        </button>
+                        <button type="button" class="wishlist-btn">
+                          <i class="icon icon-heart"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="product-detail">
+                      <h3 class="product-title">
+                        <a href="single-product.html">{{ product.name }}</a>
+                      </h3>
+                      <div class="item-price text-primary">{{ product.price }}</div>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
 
                  
             <nav class="navigation paging-navigation text-center padding-medium" role="navigation">
@@ -323,8 +592,8 @@
     <hr>
   </section>
 
-  <script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
-  <script src="{% static 'js/plugins.js' %}"></script>
-  <script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 
-  {% endblock %}
+{% endblock %}
