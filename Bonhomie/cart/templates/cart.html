@@ -32,22 +32,23 @@
             <h3 class="cart-title col-lg-4">Subtotal</h3>
           </div>
         </div>
+        {% for item in cart_items %}
         <div class="cart-item border-bottom padding-small">
           <div class="row">
             <div class="col-lg-4 col-md-3">
               <div class="row cart-info d-flex flex-wrap">
                 <div class="col-lg-5">
                   <div class="card-image">
-                    <img src="{% static 'images/selling-products6.jpg' %}" alt="cloth" class="img-fluid">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="card-detail">
                     <h3 class="card-title">
-                      <a href="#">Iphone 13</a>
+                      <a href="{{ product.name.url }}">{{ product.name }}</a>
                     </h3>
                     <div class="card-price">
-                      <span class="money text-primary" data-currency-usd="$1200.00">$1500.00</span>
+                      <span class="money text-primary" data-currency-usd="$1200.00">{{ product.price }}</span>
                     </div>
                   </div>
                 </div>
@@ -64,7 +65,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="total-price">
-                    <span class="money text-primary">$1500.00</span>
+                    <span class="money text-primary">{{ cart.total_price }}</span>
                   </div>
                 </div>
               </div>
@@ -76,51 +77,7 @@
             </div>
           </div>
         </div>
-        <div class="cart-item border-bottom padding-small">
-          <div class="row">
-            <div class="col-lg-4 col-md-3">
-              <div class="row cart-info d-flex flex-wrap">
-                <div class="col-lg-5">
-                  <div class="card-image">
-                    <img src="{% static 'images/selling-products7.jpg' %}" alt="cloth" class="img-fluid">
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="card-detail">
-                    <h3 class="card-title">
-                      <a href="#">Pink watch</a>
-                    </h3>
-                    <div class="card-price">
-                      <span class="money text-primary" data-currency-usd="$1200.00">$870.00</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-7">
-              <div class="row d-flex">
-                <div class="col-lg-6">
-                  <div class="qty-number d-flex align-items-center justify-content-start">
-                    <button class="decrement-button">-</button>
-                    <input type="text" name="quantity" class="spin-number-output" value="1" min="1" max="100">
-                    <button class="increment-button">+</button>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="total-price">
-                    <span class="money text-primary">$870.00</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-1 col-md-2">
-              <div class="cart-remove">
-                <a href="#"><i class="icon icon-close"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
       <div class="cart-totals">
         <h2 class="section-title">Cart Totals</h2>
         <div class="total-price">
@@ -131,7 +88,7 @@
                 <td data-title="Subtotal">
                   <span class="price-amount amount text-primary">
                     <bdi>
-                      <span class="price-currency-symbol">$</span>2,370.00
+                      <span class="price-currency-symbol">$</span>{{ cart.total_price }}
                     </bdi>
                   </span>
                 </td>
@@ -141,7 +98,7 @@
                 <td data-title="Total">
                   <span class="price-amount amount text-primary">
                     <bdi>
-                      <span class="price-currency-symbol">$</span>2,370.00</bdi>
+                      <span class="price-currency-symbol">$</span>{{ cart.total_price }}</bdi>
                   </span>
                 </td>
               </tr>

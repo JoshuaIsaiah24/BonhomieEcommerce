@@ -49,6 +49,36 @@
     });
   }
 
+  // Add to cart button
+
+  $(document).ready(function() {
+    // Listen for clicks on the "add to cart" button
+    $('.cart-link').on('click', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+      
+      // Get the product ID from the button's data attribute
+      var productId = $(this).data('product-id');
+      
+      // Get the add to cart URL from the button's data attribute
+      var addToCartUrl = $(this).data('add-to-cart-url');
+      
+      // Send an AJAX request to add the product to the cart
+      $.ajax({
+        url: addToCartUrl,
+        method: 'POST', // or 'GET' depending on your view
+        success: function(response) {
+          // Handle the success response if needed
+          console.log('Product added to cart:', response);
+          // Optionally, update the cart details displayed on the frontend
+        },
+        error: function(xhr, status, error) {
+          // Handle any errors if needed
+          console.error('Error adding product to cart:', error);
+        }
+      });
+    });
+  });
+  
   // Tab Section
   var initTabs = function() {
     const tabs = document.querySelectorAll('[data-tab-target]')
