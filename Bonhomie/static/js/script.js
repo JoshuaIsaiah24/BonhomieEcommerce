@@ -60,12 +60,19 @@
       var productId = $(this).data('product-id');
       
       // Get the add to cart URL from the button's data attribute
-      var addToCartUrl = $(this).data('add-to-cart-url');
+      var addToCartUrl = $(this).data('add-to-cart');
+
+      // Get the CSRF token from the cookie
+      var csrftoken = getCookie('csrftoken');
       
       // Send an AJAX request to add the product to the cart
       $.ajax({
         url: addToCartUrl,
         method: 'POST', // or 'GET' depending on your view
+        headers: {
+          'X-CSRFToken': csrftoken,
+        },
+        data: { product_id: productId }, // Send additional data if needed
         success: function(response) {
           // Handle the success response if needed
           console.log('Product added to cart:', response);
@@ -78,6 +85,23 @@
       });
     });
   });
+  
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
   
   // Tab Section
   var initTabs = function() {
