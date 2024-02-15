@@ -19,8 +19,11 @@ def cart_details(request):
 
 def add_to_cart(request, product_id):
     product = Product.objects.get(id=product_id)
-    cart_item, created = Cart.objects.get_or_create(product=product, user=request.user.id)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart_item, item_created = Cart.objects.get_or_create(cart=cart, product=product)
     
-    cart_item.quantity +=1
-    cart_item.save()
+    if not item_created:
+        cart_item.quantity += 1
+        cart_item.save()
+        
     return redirect('cart')

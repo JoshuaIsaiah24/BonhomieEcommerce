@@ -21,6 +21,7 @@
       </div>
     </div>
   </section>
+  {% csrf_token %}
 
   <div class="shopify-grid padding-large">
     <div class="container">
@@ -54,9 +55,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -91,9 +91,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -129,9 +128,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -167,9 +165,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -205,9 +202,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -243,9 +239,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                          <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -281,9 +276,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                        <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
@@ -319,9 +313,8 @@
                     </div>
                     <div class="cart-concern">
                       <div class="cart-button d-flex justify-content-between align-items-center">
-                        <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i
-                            class="icon icon-arrow-io"></i>
-                        </button>
+                        <button type="button" class="btn-wrap cart-link d-flex align-items-center" data-product-id="{{ product.id }}" data-add-to-cart-url="{{ product.add_to_cart}}">add to cart
+                           <i class="icon icon-arrow-io"></i></button>
                         <button type="button" class="view-btn tooltip d-flex">
                           <i class="icon icon-screen-full"></i>
                           <span class="tooltip-text">Quick view</span>
