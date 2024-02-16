@@ -60,7 +60,7 @@
       var productId = $(this).data('product-id');
       
       // Get the add to cart URL from the button's data attribute
-      var addToCartUrl = $(this).data('add-to-cart');
+      var addToCartUrl = $(this).data('add-to-cart-url');
 
       // Get the CSRF token from the cookie
       var csrftoken = getCookie('csrftoken');
